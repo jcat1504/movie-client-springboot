@@ -1,5 +1,5 @@
 # Use the official OpenJDK image as the base image
-FROM openjdk:17-oracle
+FROM openjdk:17-jdk
 
 # Copy the JAR file into the container
 COPY target/movies-0.0.1-SNAPSHOT.jar movie-client.jar
