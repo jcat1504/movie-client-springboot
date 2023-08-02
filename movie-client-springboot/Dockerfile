@@ -7,3 +7,5 @@ COPY target/movies-0.0.1-SNAPSHOT.jar movie-client.jar
 # Set the entry point to run the JAR file
 ENTRYPOINT ["java", "-jar", "movie-client.jar"]
 
+# Expose the port that your Spring Boot application listens on
+EXPOSE 8080
