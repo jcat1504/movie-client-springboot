@@ -1,6 +1,7 @@
 package unicorndev.movies;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +12,7 @@ import java.util.Optional;
 @RestController
 //@CrossOrigin(origins = "http://localhost:3000")
 //changes to cross origin
-@CrossOrigin(origins = "https://movie-gold-v1.onrender.com")
+@CrossOrigin(origins = "*")
 @RequestMapping("/api/v1/movies")
 public class MovieController {
 
@@ -31,7 +32,9 @@ public class MovieController {
             Movie fetchedMovie = movie.get();
             List<Review> reviews = fetchedMovie.getReviews(); // Update the field name
             // Process the fetched movie and reviews as needed
-            return new ResponseEntity<>(fetchedMovie, HttpStatus.OK);
+            HttpHeaders headers = new HttpHeaders();
+            headers.add("Access-Control-Allow-Origin", "https://movie-gold-v1.onrender.com");
+            return new ResponseEntity<>(fetchedMovie, headers, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
