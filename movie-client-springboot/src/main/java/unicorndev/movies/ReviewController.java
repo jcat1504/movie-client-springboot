@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @RestController
 //@CrossOrigin(origins = "http://localhost:3000")
-@CrossOrigin(origins = "https://movie-gold-v1.onrender.com")
+//@CrossOrigin(origins = {"https://movie-gold-v1.onrender.com"})
 @RequestMapping("/api/v1/reviews")
 public class ReviewController {
     @Autowired

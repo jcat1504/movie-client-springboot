@@ -12,7 +12,7 @@ import java.util.Optional;
 @RestController
 //@CrossOrigin(origins = "http://localhost:3000")
 //changes to cross origin
-@CrossOrigin(origins = "*")
+//@CrossOrigin(origins = {"https://movie-gold-v1.onrender.com"})
 @RequestMapping("/api/v1/movies")
 public class MovieController {
 
