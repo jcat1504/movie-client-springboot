@@ -10,7 +10,6 @@ import org.springframework.context.annotation.Import;
 
 @SpringBootApplication
 @RestController
-//@Import(CorsConfig.class) // Import your CorsConfig class
 public class MoviesApplication {
 
 	public static void main(String[] args) {

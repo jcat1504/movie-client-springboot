@@ -30,11 +30,8 @@ public class MovieController {
         Optional<Movie> movie = service.findMovieByImdbId(imdbId);
         if (movie.isPresent()) {
             Movie fetchedMovie = movie.get();
-            List<Review> reviews = fetchedMovie.getReviews(); // Update the field name
             // Process the fetched movie and reviews as needed
-            HttpHeaders headers = new HttpHeaders();
-            headers.add("Access-Control-Allow-Origin", "https://movie-gold-v1.onrender.com");
-            return new ResponseEntity<>(fetchedMovie, headers, HttpStatus.OK);
+            return new ResponseEntity<>(fetchedMovie, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
