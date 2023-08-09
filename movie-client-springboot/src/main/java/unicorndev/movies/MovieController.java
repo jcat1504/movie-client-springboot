@@ -11,7 +11,6 @@ import java.util.Optional;
 
 @RestController
 //@CrossOrigin(origins = "http://localhost:3000")
-//changes to cross origin
 //@CrossOrigin(origins = {"https://movie-gold-v1.onrender.com"})
 @RequestMapping("/api/v1/movies")
 public class MovieController {
@@ -30,12 +29,12 @@ public class MovieController {
         Optional<Movie> movie = service.findMovieByImdbId(imdbId);
         if (movie.isPresent()) {
             Movie fetchedMovie = movie.get();
-            // Process the fetched movie and reviews as needed
             return new ResponseEntity<>(fetchedMovie, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+
 
 }
 
