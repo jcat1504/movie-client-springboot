@@ -1,7 +1,6 @@
 package unicorndev.movies;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,11 +9,8 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-//@CrossOrigin(origins = "https://movie-gold-v1.onrender.com", allowedHeaders = "*")
-//@CrossOrigin(origins = {"https://movie-gold-v1.onrender.com"})
-//@CrossOrigin(origins = "*")
+@CrossOrigin(origins = {"https://movie-gold-v1.onrender.com"})
 @RequestMapping("/api/v1/movies")
-
 public class MovieController {
 
     @Autowired
@@ -36,7 +32,4 @@ public class MovieController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-
-
 }
-
